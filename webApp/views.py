@@ -21,8 +21,30 @@ def index(request):
 	return render(request, 'webApp/index.html', {'script_plot' : script , 'div_plot' : div} )
 
 
+def homeTherapist(request):
+	return render(request, 'webApp/inicioterapeuta.html')
+
+
+
 def registerTherapist(request):
 	return render(request, 'webApp/registroterapeuta.html')
 
+
+def registerPatient(request):
+	return render(request, 'webApp/registropaciente.html')
+
+
+def registerPatientMedInfo(request):
+	return render(request, 'webApp/registroterapeutico.html')
+
+
 def searchPatient(request):
 	return render(request, 'webApp/consultarpaciente.html')
+
+
+def searchTherapy(request):
+	return render(request, 'webApp/terapiasguardadas.html')
+
+
+def registerTherapy(request):
+	return render(request, 'webApp/tomadedatos.html')
