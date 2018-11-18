@@ -10,60 +10,75 @@ Version    : 1.0
 Released   : 20140322
 
 -->
+
+<!--
+# NeurON Software.
+#
+# Created by Research Group Codigo Enigma (UNIMINUTO - Colombia) & ALIFE Research Group (UNAL - Colombia) on November 2018.
+# Copyright (c) 2018. Research Group on Computational Intelligence 'Enigma Code', Uniminuto Colombia. Research Group on Artificial Life - ALIFE, UNAL Colombia. All rights reserved.
+#
+# This file is part of NeurON Software.
+#
+# NeurON is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, version 3.
+*/
+
+/**
+ * This class represents the behavior of several Problems Solutions based on Strings
+ * @author MSc. Carlos Andres Sierra, PhD. student
+ */
+-->
+
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>NeurON</title>
+		<meta name="keywords" content="EEG Signals,Brain-Computer Interface,Music Therapy" />
+		<meta name="description" content="Este es un sitio web para mostrar informacion capturada a pacientes usando interfaces cerebro-computador durante distintas musico-terapias" />
+		
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+		<link href="static/webApp/css/default.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="static/webApp/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
-</head>
-<body>
-<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-        	<span class="icon icon-cog">Neuron</span>
+		<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+	</head>
+	<body>
+		<div id="header-wrapper">
+			<div id="header" class="container">
+				<div id="logo">
+					<span class="icon icon-cog">Neuron</span>
+				</div>
+				<div id="menu">
+					<ul>
+						
+						<li><a href="" accesskey="2" title="">Registro Terapeuta</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<div id="menu">
-			<ul>
-				
-				<li><a href="#" accesskey="2" title="">Registro Terapeuta</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<div class="wrapper">
-	
-	<div id="welcome" class="container">
+		<div class="wrapper">
+			<div id="welcome" class="container">
     
-
+				<form method="POST">
+	     				<label valing="middle">Nombre </label><input type="text">
+					<label valing="middle">Apellido </label><input type="text">
+					<label valing="middle">Correo Electrónico</label><input type="text">
+					<label valing="middle">Cédula </label><input type="text">
+					<label valing="middle">Código del centro médico </label><input type="text">
+					
+					<select name="Especialidad">
+						<option>Fisioterapia</option>
+						<option>Musicoterapia</option>
+		 			</select>
+		 			
+					<label valing="middle">Contraseña </label><input type="password">
+		 			<label valing="middle">Confirmar Contraseña </label><input type="password">
 		
-		<form method="POST">
-	     <label valing="middle">Nombre </label><input type="text">
-		 <label valing="middle">Apellido </label><input type="text">
-		 <label valing="middle">Correo Electrónico</label><input type="text">
-		 <label valing="middle">Cédula </label><input type="text">
-		 <label valing="middle">Código del centro médico </label><input type="text">
-		 <select name="Especialidad">
-		 <option>Fisioterapia</option>
-		 <option>Musicoterapia</option>
-		 </select>
-		 <label valing="middle">Contraseña </label><input type="password">
-		 <label valing="middle">Confirmar Contraseña </label><input type="password">
-		
-		 <input type= "submit" value="enviar" id="textsend"><br><br>
-		 <a>Recuperar Contraseña</a> 
-		 
-	</div>
+		 			<input type= "submit" value="enviar" id="textsend"><br><br>
 
-	</div>
-</div>
-
-
-</body>
+				</form>
+		 		<a>Recuperar Contraseña</a> 
+			</div>
+		</div>
+	</body>
 </html>

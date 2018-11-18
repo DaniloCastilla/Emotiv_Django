@@ -1,4 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
 Design by TEMPLATED
 http://templated.co
@@ -10,106 +9,117 @@ Version    : 1.0
 Released   : 20140322
 
 -->
+
+<!--
+# NeurON Software.
+#
+# Created by Research Group Codigo Enigma (UNIMINUTO - Colombia) & ALIFE Research Group (UNAL - Colombia) on November 2018.
+# Copyright (c) 2018. Research Group on Computational Intelligence 'Enigma Code', Uniminuto Colombia. Research Group on Artificial Life - ALIFE, UNAL Colombia. All rights reserved.
+#
+# This file is part of NeurON Software.
+#
+# NeurON is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, version 3.
+*/
+
+/**
+ * This class represents the behavior of several Problems Solutions based on Strings
+ * @author MSc. Carlos Andres Sierra, PhD. student
+ */
+-->
+{% load staticfiles %}
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
-<link href="static/webApp/css/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="static/webApp/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>NeurON</title>
+		<meta name="keywords" content="EEG Signals,Brain-Computer Interface,Music Therapy" />
+		<meta name="description" content="Este es un sitio web para mostrar informacion capturada a pacientes usando interfaces cerebro-computador durante distintas musico-terapias" />
+		
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+		<link href="static/webApp/css/default.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="static/webApp/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
+		<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+		<script src="http://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>		
+		<link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css">
+    		{{script_plot|safe}}
 
-</head>
-<body>
-<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-        	<span class="icon icon-code">Neuron</span> <button class="button-right"  id="btnLogin">Iniciar Sesión</button> <a href="#" class="button-right">Registrarse</a>
+		
+	</head>
+	<body>
+		<div id="header-wrapper">
+			<div id="header" class="container">
+				<div id="logo">
+				<span class="icon icon-code">Neuron</span> <button class="button-right"  id="btnLogin">Iniciar Sesión</button> <a href="#" class="button-right">Registrarse</a>
+				</div>
+			
+			</div>
 		</div>
-	
-	</div>
-</div>
-<div class="wrapper">
-	<div id="banner" class="container" align="center"><img src="static/webApp/images/Epoc3-4.jpg" width="200" height="200" alt="" /></div>
-	<div id="welcome" class="container">
-    	
-<div class="title">
-	  <h3>¿Cuál es nuestro propósito?</h3>
+		<div class="wrapper">
+			<div id="banner" class="container" align="center"><img src="static/webApp/images/Epoc3-4.jpg" width="200" height="200" alt="" /></div>
+			<div id="welcome" class="container">
+		    	
+				<div class="title">
+			  		<h3>¿Cuál es nuestro propósito?</h3>
+				</div>
+				<p>El proyecto "NeurOn" conecta por medio de la <strong> musicoterapia.</strong> el enlace perido con el paciente y sus acciones motoras, otorgandole al paciente <a href="https://www.emotiv.com/" rel="nofollow">Emotiv</a>. </p>
+			</div>
+				
+			<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+	  		<div class="modal-content">
+	    			<span class="close">&times;</span>
+					<form method="POST">
+		     				<label align="middle"><img src="static/webApp/images/User.png" width="30" height="30" alt="" />Usuario </label><input type="text">
+						 <br><label><img src="https://cells4life.es/wp-content/uploads/2016/07/icono-candado.png" width="30" height="30" alt="" />Contraseña  </label><input type="password" >
+						<br> Recordar Contraseña<input type="checkbox" name="chkrecordar" value="recordar"><br>
+			 			<input type= "submit" value="enviar" id="textsend"><br><br>
+					</form>
+			 		<a>Recuperar Contraseña</a> 
+			</div>
 		</div>
-		<p>El proyecto "NeurOn" conecta por medio de la <strong> musicoterapia.</strong> el enlace perido con el paciente y sus acciones motoras, otorgandole al paciente  <a href="https://www.emotiv.com/" rel="nofollow">Emotiv</a>. </p>
-	</div>
-	
-	
-<div id="myModal" class="modal">
+		
+	<div align="center">
+           {{div_plot|safe}}
+ 	</div>safe
+          
+		
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-	<form method="POST">
-	     <label align="middle"><img src="static/webApp/images/User.png" width="30" height="30" alt="" />Usuario </label><input type="text">
-		 <br><label><img src="https://cells4life.es/wp-content/uploads/2016/07/icono-candado.png" width="30" height="30" alt="" />Contraseña  </label><input type="password" >
-		<br> Recordar Contraseña<input type="checkbox" name="chkrecordar" value="recordar"><br>
-		 <input type= "submit" value="enviar" id="textsend"><br><br>
-		 <a>Recuperar Contraseña</a> 
-		 
-	 
-  </div>
+		
+		<script>
 
-</div>
-	
-	
-<div id="footer">
-	<div class="container">
-		<div class="fbox1">
-		<span class="icon icon-map-marker"></span>
-			<span>1234 Fictional Road Suite #789
-			<br />Nashville TN 00000</span>
-		</div>
-		<div class="fbox1">
-			<span class="icon icon-phone"></span>
-			<span>
-				Telephone: 3123345623
-			</span>
-		</div>
-		<div class="fbox1">
-			<span class="icon icon-envelope"></span>
-			<span>businessname@business.com</span>
-		</div>
-	</div>
-</div>
-<script>
+			// Get the modal
+			var modal = document.getElementById('myModal');
 
-// Get the modal
-var modal = document.getElementById('myModal');
+			// Get the button that opens the modal
+			var btn = document.getElementById("btnLogin");
 
-// Get the button that opens the modal
-var btn = document.getElementById("btnLogin");
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+			// When the user clicks the button, open the modal 
+			btn.onclick = function() 
+			{
+			    modal.style.display = "block";
+			}
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() 
+			{
+			    modal.style.display = "none";
+			}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) 
+			{
+			    	if (event.target == modal) 
+				{
+					modal.style.display = "none";
+			    	}
+			}
+		</script>
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-
-</body>
+	</body>
 </html>
